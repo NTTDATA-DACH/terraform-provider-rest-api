@@ -7,6 +7,20 @@ terraform {
   }
 }
 
-provider "hashicups" {}
+provider "hashicups" {
+    base_url = "https://jsonplaceholder.typicode.com"
+    #auth_token = "token"
+}
 
-data "hashicups_coffees" "example" {}
+resource "hashicups_apiresource" "edu" {
+    endpoint_path = "posts/1"
+    payload = jsonencode({
+        title = "foo"
+        body = "bar"
+        userId = 1
+    })
+}
+
+output "response" {
+    value = hashicups_apiresource.edu.response
+}
