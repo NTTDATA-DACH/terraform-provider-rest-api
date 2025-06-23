@@ -24,7 +24,7 @@ func NewApiResource() resource.Resource {
 }
 
 type apiResource struct {
-	providerData *hashicupsProviderModel
+	providerData *apiResourceProviderModel
 }
 
 type apiResourceModel struct {
@@ -40,7 +40,7 @@ func (r *apiResource) Configure(ctx context.Context, req resource.ConfigureReque
 		return
 	}
 
-	providerCfg, ok := req.ProviderData.(*hashicupsProviderModel)
+	providerCfg, ok := req.ProviderData.(*apiResourceProviderModel)
 	if !ok {
 		resp.Diagnostics.AddError(
 			"Unexpected Resource Configure Type",

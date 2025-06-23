@@ -1,4 +1,4 @@
-module github.com/hashicorp/terraform-provider-hashicups
+module github.com/NTTDATA-DACH/terraform-provider-nttdata-rest-api
 
 go 1.23.7
 
