@@ -53,7 +53,7 @@ func (p *apiResourceProvider) Schema(_ context.Context, _ provider.SchemaRequest
 			},
 			"auth_token": schema.StringAttribute{
 				Description: "Authentication token for the API",
-				Required:    true,
+				Optional:    true,
 				Sensitive:   true,
 			},
 		},
